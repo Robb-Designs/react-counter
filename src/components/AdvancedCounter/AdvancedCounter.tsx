@@ -15,9 +15,15 @@ export default function AdvancedCounter() {
         setCount(count -1);
         console.log(count)
     }
-
     return(
     
+        <div>
+            <h1>{count}</h1>
+            <div>
+                <button onClick={handleAdd}>+ Add</button>
+                <button onClick={handleSub}>- Sub</button>
+            </div>
+        </div>
 
     );
 }
