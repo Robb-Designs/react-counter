@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 
 export default function AdvancedCounter() {
@@ -7,14 +7,18 @@ export default function AdvancedCounter() {
     // Adding 
     function handleAdd(){
         setCount(prev => prev + 1); //use what React knows the value is, better than setCount(count + 1)
-        console.log(count)
+      
     }
 
     // Subtracting
     function handleSub(){
         setCount(prev => prev - 1);
-        console.log(count)
+       
     }
+
+
+    useEffect(() => {}, [count])
+
     return(
     
         <div>
