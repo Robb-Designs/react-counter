@@ -8,11 +8,17 @@ export default function AdvancedCounter() {
   // Adding handler: takes prev value react has and will add by what the input value is
   function handleAdd() {
     setCount((prev) => prev + step); //use what React knows the value is, better than setCount(count + 1)
+
+    //guard
+    if (step === 0) return;
   }
 
   // Subtracting handler: takes prev value react has and will subtract by what the input value is
   function handleSub() {
     setCount((prev) => prev - step);
+
+    //guard
+    if (step === 0) return;
   }
 
   // input handler: Takes the input value, turns the value into a number, and sets the step state to the input value given
@@ -23,6 +29,7 @@ export default function AdvancedCounter() {
 
     if (stepValue !== "") {
       setStep(Number(stepValue));
+
     }
   }
 
