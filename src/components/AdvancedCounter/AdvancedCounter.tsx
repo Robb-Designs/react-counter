@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 
 export default function AdvancedCounter() {
   const [count, setCount] = useState(0); //Set initial default state to 0
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(1); // Set step value default state to 0
+  const [inputValue, setInputValue] = useState("1"); // Set input value default state
 
   // Adding handler: takes prev value react has and will add by what the input value is
   function handleAdd() {
@@ -17,7 +18,12 @@ export default function AdvancedCounter() {
   // input handler: Takes the input value, turns the value into a number, and sets the step state to the input value given
   function handleInput(e: React.ChangeEvent<HTMLInputElement>) {
     const stepValue = e.target.value;
-    setStep(stepValue === "" ? 1 : Number(stepValue)); //think of this as => 'Is steepValue strictly an empty string? If so we will place 1 there, or else we'll put the input value thats been turned into a number'
+
+    setInputValue(stepValue);
+
+    if (stepValue !== "") {
+      setStep(Number(stepValue));
+    }
   }
 
   useEffect(() => {
@@ -34,7 +40,7 @@ export default function AdvancedCounter() {
 
       <label htmlFor="step-input">Step Count: </label>
       <input
-        value={step}
+        value={inputValue}
         type="number"
         placeholder="e.g 5"
         id="step-input"
