@@ -6,13 +6,13 @@ export default function AdvancedCounter() {
     
     // Adding 
     function handleAdd(){
-        setCount(count + 1);
+        setCount(prev => prev + 1); //use what React knows the value is, better than setCount(count + 1)
         console.log(count)
     }
 
     // Subtracting
     function handleSub(){
-        setCount(count -1);
+        setCount(prev => prev - 1);
         console.log(count)
     }
     return(
