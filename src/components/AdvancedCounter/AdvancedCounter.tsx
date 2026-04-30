@@ -17,7 +17,7 @@ export default function AdvancedCounter() {
   // input handler: Takes the input value, turns the value into a number, and sets the step state to the input value given
   function handleInput(e: React.ChangeEvent<HTMLInputElement>) {
     const stepValue = e.target.value;
-    setStep(stepValue === "" ? 1 : Number(e.target.value)); //think of this as => 'Is steepValue strictly an empty string? If so we will place 1 there, or else we'll put the input value thats been turned into a number'
+    setStep(stepValue === "" ? 1 : Number(stepValue)); //think of this as => 'Is steepValue strictly an empty string? If so we will place 1 there, or else we'll put the input value thats been turned into a number'
   }
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function AdvancedCounter() {
       <label htmlFor="step-input">Step Count: </label>
       <input
         value={step}
-        type="text"
+        type="number"
         placeholder="e.g 5"
         id="step-input"
         onChange={handleInput}
