@@ -4,12 +4,12 @@ export default function AdvancedCounter() {
   const [count, setCount] = useState(0); //Set initial default state to 0
   const [step, setStep] = useState(1);
 
-  // Adding handler: takes prev value react has and will add 1
+  // Adding handler: takes prev value react has and will add by what the input value is
   function handleAdd() {
     setCount((prev) => prev + step); //use what React knows the value is, better than setCount(count + 1)
   }
 
-  // Subtracting handler: takes prev value react has and will subtract 1
+  // Subtracting handler: takes prev value react has and will subtract by what the input value is
   function handleSub() {
     setCount((prev) => prev - step);
   }
